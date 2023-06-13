@@ -1,0 +1,116 @@
+﻿<Window
+    x:Class="Principal.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Principal"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Win_principal"
+    Title="MATINFO"
+    Width="840"
+    Height="500"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
+        <DataTemplate x:Key="caseACocher">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Button x:Name="bt_personnel"
+            Width="135"
+            Height="50"
+            Margin="675,114,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gérer le personnel"
+            FontSize="14" />
+        <Button x:Name="bt_materiel"
+            Width="135"
+            Height="50"
+            Margin="675,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gérer le matériel"
+            FontSize="14" Click="bt_materiel_Click" />
+        <Button x:Name="bt_categorie"
+            Width="135"
+            Height="50"
+            Margin="675,172,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gérer la catégorie"
+            FontSize="14" />
+        <Button
+            Width="135"
+            Height="50"
+            Margin="675,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gérer les attributions"
+            FontSize="14" />
+        <Label
+            Width="456"
+            Height="35"
+            Margin="20,19,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Les attributions"
+            FontSize="16" />
+        <DataGrid
+            x:Name="dg_attributions"
+            Width="456"
+            Height="408"
+            Margin="20,54,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Matériel" />
+                <DataGridTextColumn Width="120" Header="Personnel" />
+                <DataGridTextColumn Width="1*" Header="Date utilisation" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListView
+            x:Name="lv_materiel"
+            Width="166"
+            Height="178"
+            Margin="493,227,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding NomM}" Header="Materiel" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView
+            x:Name="lv_categorie"
+            Width="166"
+            Height="167"
+            Margin="493,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30" CellTemplate="{StaticResource caseACocher}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding NomC}" Header="Categorie du matériel" />
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button
+            x:Name="bt_filtre"
+            Width="130"
+            Height="40"
+            Margin="511,422,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Effacer les filtres" />
+
+    </Grid>
+</Window>

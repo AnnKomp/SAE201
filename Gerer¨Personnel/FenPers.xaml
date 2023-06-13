@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="Gerer_Personnel.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Gerer_Personnel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Win_Personnel"
+    Title="Personnel"
+    Width="730"
+    Height="390"
+    mc:Ignorable="d">
+    <Grid x:Name="Win_GererMateriel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <DataGrid
+            x:Name="dg_Personnel"
+            Width="460"
+            Height="300"
+            Margin="10,22,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="170" Header="Nom" />
+                <DataGridTextColumn Width="140" Header="Prenom" />
+                <DataGridTextColumn Width="150" Header="Métier" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            x:Name="bt_creerPers"
+            Grid.Column="1"
+            Width="200"
+            Height="50"
+            Margin="0,22,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Creer un personnel"
+            FontSize="14" />
+        <Button
+            x:Name="bt_modifPers"
+            Grid.Column="1"
+            Width="200"
+            Height="50"
+            Margin="0,96,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Modifier un personnel"
+            FontSize="14" />
+        <Button
+            x:Name="bt_suppPers"
+            Grid.Column="1"
+            Width="200"
+            Height="50"
+            Margin="0,172,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Supprimer un personnel"
+            FontSize="14" />
+        <Button
+            x:Name="bt_sortie"
+            Grid.Column="1"
+            Width="130"
+            Height="40"
+            Margin="0,269,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Retour"
+            FontSize="16" />
+
+    </Grid>
+</Window>
