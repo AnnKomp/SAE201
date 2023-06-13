@@ -11,6 +11,7 @@
     Height="500"
     ResizeMode="NoResize"
     mc:Ignorable="d">
+
     <Window.Resources>
         <!--  template pour inserer une case a cocher dans un listview : la case est cochee sur la selection d'un item  -->
         <DataTemplate x:Key="caseACocher">
@@ -19,8 +20,10 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
+
     <Grid>
-        <Button x:Name="bt_personnel"
+        <Button
+            x:Name="bt_personnel"
             Width="135"
             Height="50"
             Margin="675,114,0,0"
@@ -28,15 +31,18 @@
             VerticalAlignment="Top"
             Content="Gérer le personnel"
             FontSize="14" />
-        <Button x:Name="bt_materiel"
+        <Button
+            x:Name="bt_materiel"
             Width="135"
             Height="50"
             Margin="675,55,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="bt_materiel_Click"
             Content="Gérer le matériel"
-            FontSize="14" Click="bt_materiel_Click" />
-        <Button x:Name="bt_categorie"
+            FontSize="14" />
+        <Button
+            x:Name="bt_categorie"
             Width="135"
             Height="50"
             Margin="675,172,0,0"

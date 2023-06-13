@@ -1,9 +1,9 @@
 ﻿<Window
-    x:Class="Gerer_Materiel.FenMat"
+    x:Class="Principal.FenMat"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Gerer_Materiel"
+    xmlns:local="clr-namespace:Principal"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Win_Materiel"
     Title="Materiel"
